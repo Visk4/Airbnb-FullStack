@@ -1,0 +1,71 @@
+<% layout("/layouts/boilerplate")%>
+<body>
+    <div class="row mt-3">
+    <div class="col-8 offset-2">
+    <h2>Create new Listing</h2>
+    <form method="POST" action="/listings" class="needs-validation" enctype="multipart/form-data" novalidate>
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input name="listing[title]" type="text" placeholder="Add a catchy title" class="form-control" required>
+            <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="desciption" class="form-label">Description</label> 
+            <textarea name="listing[description]" type="text" placeholder="enter description" class="form-control" required></textarea>
+            <div class="invalid-feedback">Please enter a short description</div> 
+        </div>  
+
+        <div class="mb-3">
+            <label for="image" class="form-label">Upload Image</label>
+            <input name="listing[image]" type="file" class="form-control">
+        </div>
+        
+        <div class="row">
+        <div class="mb-3 col-md-4">
+            <label for="price" class="form-label">Price</label>
+            <input name="listing[price]"  placeholder="1200" class="form-control" type="number" required>
+            <div class="invalid-feedback">Enter a valid price</div> 
+        </div>
+
+        <div class="col-md-8 mb-3">
+            <label for="country" class="form-label">Country</label>
+            <input name="listing[country]" type="text" placeholder="India" class="form-control" required>
+            <div class="invalid-feedback">Country should be valid</div> 
+        </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="location">Location</label>
+            <input name="listing[location]" type="text" placeholder="Mumbai" class="form-control" required>
+            <div class="invalid-feedback">Location should be valid</div> 
+        </div>
+
+        
+        <select class="form-select" name="listing[category][]" multiple="true">
+            <optgroup label="All categories">
+            </optgroup>
+            <optgroup label="Geographical">
+              <option value="Urban">Urban</option>
+              <option value="City">City</option>
+              <option value="Mountain">Mountain</option>
+              <option value="Beach">Beach</option>
+            </optgroup>
+            <optgroup label="Nature">
+              <option value="Historic">Historic</option>
+              <option value="Nature">Nature</option>
+              <option value="Lake">Lake</option>
+              <option value="Ski">Ski</option>
+              <option value="Safari">Safari</option>
+              <option value="Island">Island</option>
+              <option value="Countryside">Countryside</option>
+              <option value="Tropical">Tropical</option>
+              <option value="Desert">Desert</option>
+            </optgroup>
+          </select>
+        <button class="btn btn-dark add-btn mt-3">Add</button>
+        <br>
+    </form>
+</div>
+</div>
+</body>

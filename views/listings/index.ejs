@@ -1,0 +1,252 @@
+<% layout("/layouts/boilerplate")%>
+<body>
+    <style>
+      /* #filters{
+        display:flex;
+        flex-wrap: wrap;
+        align-items: center;
+      } */
+      /* .filter{
+        text-align: center;
+        margin-top: 2rem;
+        margin-right: 2rem;
+        opacity: 0.7;
+      } */
+      /* .filter:hover{
+        opacity: 1;
+        cursor: pointer;
+      } */
+      .taxInfo{
+        display: none;
+      }
+      .tax-toggle{
+        display: flex;
+        align-items: center;
+        border: 1px solid black;
+        border-radius: 1rem;
+        height: 3rem;
+        padding: 0.8rem;
+        margin-left: 3rem;
+        justify-content: space-between; /* Ensures even spacing */
+        width: max-content; /* Adjusts to the content width */
+      }
+      .filter-container {
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      width: 80%; /* Adjust this as needed */
+    }
+
+    .arrow {
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ccc;
+      cursor: pointer;
+      user-select: none;
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: #333;
+      border-radius: 50%;
+      opacity: 0.6;
+    }
+#left-arrow {
+  left: 0;
+}
+
+#right-arrow {
+  right: 0;
+}
+
+.filter-slider {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+}
+
+.filter {
+  flex: 0 0 auto;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.filter:hover {
+  opacity: 1;
+}
+.below-nav{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    </style>
+<div class="below-nav">
+<div id="filter-container" class="filter-container">
+  <div id="left-arrow" class="arrow">&#10094;</div>
+  <div id="filter-slider" class="filter-slider">
+    <div class="filter" data-category="Urban">
+      <div><i class="fa-solid fa-city"></i></div>
+      <p>Urban</p>
+    </div>
+    <div class="filter" data-category="City">
+      <div><i class="fa-solid fa-mountain-city"></i></div>
+      <p>Iconic cities</p>
+    </div>
+    <div class="filter" data-category="Mountain">
+      <div><i class="fa-solid fa-mountain"></i></div>
+      <p>Mountain</p>
+    </div>
+    <div class="filter" data-category="Historic">
+      <div><i class="fa-brands fa-fort-awesome-alt"></i></div>
+      <p>Historic</p>
+    </div>
+    <div class="filter" data-category="Safari">
+      <div><i class="fa-solid fa-campground"></i></div>
+      <p>Safari</p>
+    </div>
+    <div class="filter" data-category="Countryside">
+      <div><i class="fa-solid fa-cow"></i></div>
+      <p>Farms</p>
+    </div>
+    <div class="filter" data-category="Ski">
+      <div><i class="fa-solid fa-person-skiing"></i></div>
+      <p>Arctic</p>
+    </div>
+    <div class="filter" data-category="Beach">
+      <div><i class="fa-solid fa-umbrella-beach"></i></div>
+      <p>Beach</p>
+    </div>
+    <div class="filter" data-category="Island">
+      <div><i class="fa-solid fa-earth-oceania"></i></div>
+      <p>Island</p>
+    </div>
+    <div class="filter" data-category="Tropical">
+      <div><i class="fa-solid fa-tree"></i></div>
+      <p>Tropical</p>
+    </div>
+    <div class="filter" data-category="Desert">
+      <div><i class="fa-solid fa-hourglass-end"></i></div>
+      <p>Desert</p>
+    </div>
+    <div class="filter" data-category="Lake">
+      <div><i class="fa-solid fa-water"></i></div>
+      <p>Lake</p>
+    </div>    
+    <div class="filter">
+      <div><i class="fa-solid fa-circle-check"></i></div>
+      <p>Test</p>
+    </div>    
+    <div class="filter">
+      <div><i class="fa-solid fa-circle-check"></i></div>
+      <p>Test</p>
+    </div>    
+    <div class="filter">
+      <div><i class="fa-solid fa-circle-check"></i></div>
+      <p>Test</p>
+    </div>    
+    <div class="filter">
+      <div><i class="fa-solid fa-circle-check"></i></div>
+      <p>Test</p>
+    </div>    
+    <div class="filter">
+      <div><i class="fa-solid fa-circle-check"></i></div>
+      <p>Test</p>
+    </div>    
+    <div class="filter">
+      <div><i class="fa-solid fa-circle-check"></i></div>
+      <p>Test</p>
+    </div>    
+    <div class="filter">
+      <div><i class="fa-solid fa-circle-check"></i></div>
+      <p>Test</p>
+    </div>    
+    <div class="filter">
+      <div><i class="fa-solid fa-circle-check"></i></div>
+      <p>Test</p>
+    </div>    
+  </div>
+  <div id="right-arrow" class="arrow">&#10095;</div>
+</div>
+<div class="tax-toggle">
+  <div class="form-check-reverse form-switch">
+    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+    <label class="form-check-label" for="flexSwitchCheckDefault">Display with taxes</label>
+  </div>
+</div>
+</div>
+
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+    <% for(let listing of allListings){ %>
+    <a href="/listings/<%=listing._id%>" style="text-decoration: none;">
+    <div class="card listing-card col">
+        <img src="<%=listing.image.url%>" class="card-img-top" alt="listing-image" style="height: 20rem;">
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <h5 class="card-title"><%=listing.title%></h5>
+          <p class="card-text"><%=listing.description%>.</p>
+          <p class="card-text" style="font-weight: 600;">&#8377;<%=listing.price.toLocaleString("en-In")%>/night
+          <i class="taxInfo">&nbsp;(+18% GST added)</i></p>
+        </div>
+      </div>
+    </a>
+    <% }%>
+    </div>
+<script>
+    let taxSwitch = document.getElementById("flexSwitchCheckDefault");
+    taxSwitch.addEventListener("click",()=>{
+      let taxInfo = document.getElementsByClassName("taxInfo");
+      for(info of taxInfo){
+        if(info.style.display!="inline"){
+          info.style.display = "inline";
+        }
+        else{
+          info.style.display = "none";
+        }
+      }
+    })
+</script>
+<script>
+  const slider = document.getElementById('filter-slider');
+  const leftArrow = document.getElementById('left-arrow');
+  const rightArrow = document.getElementById('right-arrow');
+
+  rightArrow.addEventListener('click', () => {
+    slider.scrollLeft += slider.clientWidth; // Adjust scroll amount as needed
+  });
+
+  leftArrow.addEventListener('click', () => {
+    slider.scrollLeft -= slider.clientWidth; // Adjust scroll amount as needed
+  });
+
+  // Optional: hide the arrows when not needed
+  function updateArrows() {
+    leftArrow.style.display = slider.scrollLeft > 0 ? 'flex' : 'none';
+    rightArrow.style.display = slider.scrollWidth > slider.clientWidth + slider.scrollLeft ? 'flex' : 'none';
+  }
+
+  slider.addEventListener('scroll', updateArrows);
+  window.addEventListener('resize', updateArrows);
+
+  // Initialize the arrow visibility on page load
+  updateArrows();
+</script>
+<script>
+  document.querySelectorAll('.filter').forEach(filter => {
+    filter.addEventListener('click', () => {
+        const category = filter.getAttribute('data-category');
+        // Navigate to the listings page with the selected category as a query parameter
+        window.location.href = `/listings?category=${encodeURIComponent(category)}`;
+    });
+});
+</script>
+</body>
+
