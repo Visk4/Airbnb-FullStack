@@ -29,7 +29,7 @@ module.exports.showListing = async (req,res)=>{
         req.flash("error","Listing does not exist");
         res.redirect("/listings");
     }
-    res.render("./listings/show.ejs",{listing,mapToken:process.env.MAP_TOKEN});
+    res.render("./listings/show.ejs",{listing});
 };
 
 module.exports.createListing = async (req,res,next)=>{
