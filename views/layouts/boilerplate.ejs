@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-    <script>
-        const mapToken = '<%= mapToken %>';
-    </script>    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +30,7 @@
     <script>
         const map = new maplibregl.Map({
           container: 'map', // The ID of the HTML element to initialize the map in
-          style: `https://maps.geoapify.com/v1/styles/klokantech-basic/style.json?apiKey=${mapToken}`, // Replace YOUR_API_KEY_HERE with your actual API key
+          style: `https://maps.geoapify.com/v1/styles/klokantech-basic/style.json?apiKey=ee1f4c9d83e74f6bbe5c75a9b31ef7b2`, // Replace YOUR_API_KEY_HERE with your actual API key
           center: [<%= listing.geometry.coordinates[0] %>, <%= listing.geometry.coordinates[1] %>], // starting position [lng, lat]
           zoom: 10 // starting zoom
         });
