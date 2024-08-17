@@ -161,7 +161,7 @@ const sampleListings = [
       "Enjoy a cozy stay in this quaint cottage located in the picturesque Cotswolds countryside.",
     image: {
       filename: "listingimage",
-      url: "https://images.unsplash.com/photo-1584258205400-9738a2f0f8f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2FtcGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      url: "https://www.shutterstock.com/image-photo/beautiful-thatched-roof-cottage-bredon-600nw-2456485681.jpg",
     },
     price: 1200,
     location: "Cheltenham",
@@ -174,7 +174,7 @@ const sampleListings = [
       "Immerse yourself in Boston's history by staying in this charming brownstone in the heart of the city.",
     image: {
       filename: "listingimage",
-      url: "https://images.unsplash.com/photo-1598642302104-51a8eb8d831c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Ym93bnN0b25lfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+      url: "https://media.istockphoto.com/id/1314848043/photo/row-of-traditional-red-brick-aprtment-buildings-and-cloudy-sky.jpg?s=612x612&w=0&k=20&c=W3FwQ7NqRn2BGAfnyeIZIdLA-fkA6xPmfmm4KMxSGws=",
     },
     price: 1600,
     location: "Boston",
@@ -187,7 +187,7 @@ const sampleListings = [
       "Relax in a luxurious beachfront bungalow in Bali, with easy access to local attractions and stunning ocean views.",
     image: {
       filename: "listingimage",
-      url: "https://images.unsplash.com/photo-1520522198327-f77d6e2dd1a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGJhbGlfZGVzZXJ0fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+      url: "https://misstourist.com/wp-content/uploads/2022/05/Top-15-Bali-Overwater-Bungalows-sm.jpg",
     },
     price: 2200,
     location: "Bali",
@@ -200,12 +200,12 @@ const sampleListings = [
       "Experience breathtaking mountain views from this cozy cabin in the heart of Banff National Park.",
     image: {
       filename: "listingimage",
-      url: "https://images.unsplash.com/photo-1562138666-4903db0a78e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bW91bnRhaW4lMjB2aWV3fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+      url: "https://tunnelmountain.com/wp-content/uploads/2022/12/1080-TMR-Exterior3.jpg",
     },
     price: 1300,
     location: "Banff",
     country: "Canada",
-    category: ["Mountain"]
+    category: ["Mountain","Snow"]
   },
   {
     title: "Art Deco Apartment in Miami",
@@ -213,7 +213,7 @@ const sampleListings = [
       "Stay in a stylish Art Deco apartment in Miami, known for its vibrant nightlife and beautiful beaches.",
     image: {
       filename: "listingimage",
-      url: "https://images.unsplash.com/photo-1605455677859-9b7f7e2a6c0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YXJ0JTIwZGVjb3xlJTIwYXBhcnRtZW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+      url: "https://media.timeout.com/images/106000732/image.jpg",
     },
     price: 1400,
     location: "Miami",
@@ -226,7 +226,7 @@ const sampleListings = [
       "Enjoy a tropical paradise in this luxury villa in Phuket, complete with a private pool and stunning views.",
     image: {
       filename: "listingimage",
-      url: "https://images.unsplash.com/photo-1612062759243-5fd38b8d1b12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJvcmljYWwlMjB2aWxsYXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      url: "https://jasminevillage-phuket.com/wp-content/uploads/2023/01/IMG_0611-scaled.jpg",
     },
     price: 3000,
     location: "Phuket",
@@ -239,7 +239,7 @@ const sampleListings = [
       "Step back in time and stay in a majestic historic castle in Scotland. A unique experience for history enthusiasts.",
     image: {
       filename: "listingimage",
-      url: "https://images.unsplash.com/photo-1532735079787-790953438b60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FzdGxlJTIwY29uZHVjYWV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
+      url: "https://2f1a7f9478.visitscotland.net/binaries/content/gallery/visitscotland/cms-images/2022/06/23/culzean-castle-exterior-up",
     },
     price: 3500,
     location: "Edinburgh",
@@ -252,7 +252,7 @@ const sampleListings = [
       "Escape to a luxurious desert resort, offering comfort and relaxation amidst the stunning desert landscape.",
     image: {
       filename: "listingimage",
-      url: "https://images.unsplash.com/photo-1590505785720-9d09cf93a098?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8ZGVzZXJ0JTIwb3BhbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      url: "https://offshoretravelmagazine.com/wp-content/uploads/2023/06/unnamed-scaled.jpg",
     },
     price: 1700,
     location: "Dubai",
