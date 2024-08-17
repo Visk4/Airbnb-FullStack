@@ -11,7 +11,7 @@ module.exports.index = async (req, res) => {
     }
 
     if (search) {
-        // Use a regular expression to match the search query against multiple fields
+    // Use a regular expression to match the search query against multiple fields
         query.$or = [
             { title: { $regex: search, $options: 'i' } },
             { description: { $regex: search, $options: 'i' } },
