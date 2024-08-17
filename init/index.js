@@ -11,7 +11,7 @@ const initData = require("./data.js");
 //     console.log(err);
 // })
 
-module.exports.initDB = async ()=>{
+const initDB = async ()=>{
     await Listing.deleteMany({});
     initData.data = initData.data.map((obj)=>({...obj,owner:"66c04b5836f8af22b8f0ad62"}));
     const dataWithGeometry = await Promise.all(initData.data.map(async (d) => {
@@ -30,3 +30,5 @@ module.exports.initDB = async ()=>{
     await Listing.insertMany(dataWithGeometry);
     console.log("index connected");
 };
+
+module.exports = {initDB};
