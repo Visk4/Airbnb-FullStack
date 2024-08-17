@@ -26,6 +26,9 @@ const listingRouter = require("./routes/listings.js");
 const reviewRouter = require("./routes/reviews.js");
 const userRouter = require("./routes/users.js");
 const dbURL = process.env.ATLASDB_URL;
+const initData = require("./init/data.js");
+const initDB = require("./init/index.js");
+
 async function main() {
     await mongoose.connect(dbURL);
 }
@@ -34,6 +37,7 @@ main().then(()=>{
 }).catch((err)=>{
     console.log(err);
 })
+initDB();
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
 app.use(express.urlencoded({extended:true}));
