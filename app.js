@@ -1,6 +1,3 @@
-if(process.env.NODE_ENV != "production"){
-    require("dotenv").config();
-}
 
 const express = require("express");
 const app = express();
@@ -27,7 +24,7 @@ const reviewRouter = require("./routes/reviews.js");
 const userRouter = require("./routes/users.js");
 const dbURL = process.env.ATLASDB_URL;
 const initData = require("./init/data.js");
-const initDB = require("./init/index.js");
+const {initDB} = require("./init/index.js");
 
 async function main() {
     await mongoose.connect(dbURL);
