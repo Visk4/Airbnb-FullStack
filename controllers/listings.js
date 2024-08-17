@@ -2,19 +2,26 @@ const Listing = require("../models/listing.js");
 const ExpressError = require("../utils/ExpressError.js")
 
 module.exports.index = async (req, res) => {
-    // Extract category from query parameters
-    const { category } = req.query;
-    
-    // Build the query object based on the category parameter
+    const { category, search } = req.query;
+
     let query = {};
+
     if (category) {
-        query.category = category; // Match listings with the specified category
+        query.category = category;
     }
-    
-    // Fetch listings based on the query
+
+    if (search) {
+        // Use a regular expression to match the search query against multiple fields
+        query.$or = [
+            { title: { $regex: search, $options: 'i' } },
+            { description: { $regex: search, $options: 'i' } },
+            { location: { $regex: search, $options: 'i' } },
+            { country: { $regex: search, $options: 'i' } },
+            { category: { $regex: search, $options: 'i' } }  // Include category in the search
+        ];
+    }
+
     const allListings = await Listing.find(query);
-    
-    // Render the view with the filtered listings
     res.render("./listings/index.ejs", { allListings });
 };
 
