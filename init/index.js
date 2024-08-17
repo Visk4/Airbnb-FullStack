@@ -13,7 +13,7 @@ const initData = require("./data.js");
 
 module.exports.initDB = async ()=>{
     await Listing.deleteMany({});
-    initData.data = initData.data.map((obj)=>({...obj,owner:"66b0f3ef4e734a5e94baac5a"}));
+    initData.data = initData.data.map((obj)=>({...obj,owner:"66c04b5836f8af22b8f0ad62"}));
     const dataWithGeometry = await Promise.all(initData.data.map(async (d) => {
         const response = await fetch(`https://api.geoapify.com/v1/geocode/search?text=${encodeURIComponent(d.location)}&apiKey=ee1f4c9d83e74f6bbe5c75a9b31ef7b2`);
         const data = await response.json();
